@@ -15,6 +15,8 @@ ln -s ../../Receptor/"$a".pdbqt .
 ln -s ../../Receptor/"$a"*.map .
 ln -s ../../Receptor/"$a"*.maps.fld  
 ln -s ../../Receptor/"$a"*.maps.xyz  
+ln -s ../../Receptor/ref.dpf
+ln -s ../../Receptor/AD4_parameters.dat
 prepare_dpf42.py -l "$b".pdbqt -r "$a".pdbqt \
     -p ga_num_evals=20000000 \
     -p ga_pop_size=150 \
