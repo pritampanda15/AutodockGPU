@@ -1,0 +1,59 @@
+Steps referred from RG:
+For running ADT, you should be following next steps:
+1- Make sure that if python 2.5 installed on your PC: you can download it from the following URL:
+https://www.python.org/download/releases/2.5/
+2- install Autodock tools: you can download it at:
+http://autodock.scripps.edu/downloads/autodock-4-2-x-installation-on-windows/
+3- install mgltools:
+http://mgltools.scripps.edu/downloads
+After having finished installation of above tools, you can run ADT. Here, I recommend you to following my current protocol for running it:
+1- create a workfolder for your job and tag it based on your favorite name. (e.g. project)
+2- running ADT in start menu in windows:
+after running you should set its directory: following these steps:
+a) open ADT> File> Preferences>set> Startup Directory (in this section you should put on your workfolder path and set it). for example: “C:\Users\project
+3- prepare ligand and protein in ".pdb" format. Notice, you must labeled them by "Ligand" and "Protein" keywords.
+after having finished these steps you can run ADT: Well! you should do the below ways:
+1- open ADT:
+File > Read Molecule> Select Protein File (“.pdb” file)
+Then:
+Edit > Hydrogens >Add>>>>>> Polar Only >OK
+Edit > Hydrogens> Merge Non Polar >  Continue (in this step if you see any warning please click on "continue")
+then:
+Edit > Charges > Add Kolman Charges> Ok
+File > Save > Write PDB> >Sort Nodes (Check) > OK > (Overwrite) YES
+Well! in the next step you should try prepare the ligand:
+Ligand > Input > Open> Select Ligand File (“.pdb” file) > OK
+Now repeat above steps and then: (in this section you must add charge to your ligand. So, click on Edit menu and:
+Edite> Charges> compute Gasteiger
+Ligand > Output > Save as PDBQT
+******************************
+Now you should be executing AutoGrid4:
+For run AutoGrid following the below steps:
+1-Grid > Macromole > Choose>  Click (Protein) > Select Molecule > OK > save
+2-Grid> Set Map types >Choose Ligand> Click (Ligand) > Select Ligand
+3-Grid > GridBox> Set the BOX> File > Close Saving Current
+4-Grid > Output > Save GPF> grid.gpf> save
+5-Run > Run AutoGrid:
+a) Select Program Pathname: ‘autogrid4.exe’ (i.e. C:\Program Files (x86) \The Scripps Research Institute\Autodock\4.2.6)
+b) Select Parameter Filename: ‘grid.gpf’ (you should select it based on your workfolder path)
+c) Launch!
+Notice! in this step you must waiting for ADT response. please don't "dismiss" it!
+***************************************************************
+After having finished above steps following the below ways:
+Run ADT:
+1)Docking > Macromolecule > Set Rigid filename> Select ‘Protein.pdbqt’ > Open
+2-Docking > Ligand > Choose> Click ‘Ligand’ > Select Ligand> Accept
+3-Docking > Search Parameters > Genetic Algorithm> Accept
+4-Docking > Output > Lamarckian GA> Save file as ‘dock.dpf’
+5-Run > Run AutoDock 
+A) Select Program Pathname: ‘autodock4.exe’ (C:\Program Files (x86)\The Scripps Research Institute\Autodock\4.2.6)
+B) Select Parameter Filename: ‘dock.dpf’ (Based on you workfolder path)
+C) Launch!
+Please wait for finishing and don't dismiss it!!
+***********************************************************
+Docking result analysis:
+1-Analyze > Docking > Open> Select ‘dock.dlg’ > Open >Assign Ligand New Name > OK
+2-Analyze > Macromolecule > Choose> Click ‘Protein’ > Select Macromolecule
+3- Analyze > Conformations> Play, Ranked By Energy > Click on the ‘&’ Button
+4-Set Play Options >Check ‘Build H-Bonds’> View the hydrogen bonds formed > Check ‘Show Info’> View the Interaction Energy > Build Current Write Complex> Save as ‘Result.pdb’ ” Save....
+Now you can see all of your docking results!
