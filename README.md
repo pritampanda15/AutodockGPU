@@ -1,5 +1,7 @@
 # Autodock
 
+Refer steps for more detailed information
+
 Prepare pdbqt is to convert pdb files to pdbqt format
 
 Prep.sh file is to prepare dpf file for the ligand and protein.
